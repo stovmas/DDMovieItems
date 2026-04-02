@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --curtain-red: #8B0000;
+  --gold: #FFD700;
+  --doordash-red: #FF3008;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #1A0A0A;
+  color: #FFFFFF;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Theater marquee lights border */
+.marquee-border {
+  position: relative;
+}
+
+.marquee-border::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: repeating-linear-gradient(
+    90deg,
+    #FFD700 0px,
+    #FFD700 8px,
+    transparent 8px,
+    transparent 20px
+  );
+  border-radius: 12px;
+  z-index: -1;
+  animation: marqueeScroll 2s linear infinite;
+}
+
+@keyframes marqueeScroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 0; }
+}
+
+/* Curtain texture */
+.curtain-texture {
+  background: linear-gradient(
+    180deg,
+    rgba(139, 0, 0, 0.95) 0%,
+    rgba(100, 0, 0, 0.98) 30%,
+    rgba(74, 4, 4, 1) 100%
+  );
+  background-size: 100% 100%;
+}
+
+.curtain-left {
+  background: linear-gradient(
+    90deg,
+    rgba(74, 4, 4, 1) 0%,
+    rgba(139, 0, 0, 0.95) 40%,
+    rgba(178, 34, 34, 0.9) 70%,
+    rgba(139, 0, 0, 0.95) 100%
+  );
+}
+
+.curtain-right {
+  background: linear-gradient(
+    270deg,
+    rgba(74, 4, 4, 1) 0%,
+    rgba(139, 0, 0, 0.95) 40%,
+    rgba(178, 34, 34, 0.9) 70%,
+    rgba(139, 0, 0, 0.95) 100%
+  );
+}
+
+/* Curtain folds */
+.curtain-folds-left {
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    rgba(0, 0, 0, 0.15) 3px,
+    transparent 6px,
+    rgba(255, 255, 255, 0.05) 9px,
+    transparent 12px
+  );
+}
+
+.curtain-folds-right {
+  background: repeating-linear-gradient(
+    270deg,
+    transparent 0px,
+    rgba(0, 0, 0, 0.15) 3px,
+    transparent 6px,
+    rgba(255, 255, 255, 0.05) 9px,
+    transparent 12px
+  );
+}
+
+/* DoorDash cart styling */
+.dd-cart {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.dd-cart-item {
+  border-bottom: 1px solid #E8E8E8;
+  transition: all 0.3s ease;
+}
+
+.dd-cart-item:last-child {
+  border-bottom: none;
+}
+
+.dd-cart-item.hidden-item {
+  background: repeating-linear-gradient(
+    45deg,
+    #F5F5F5,
+    #F5F5F5 10px,
+    #EBEBEB 10px,
+    #EBEBEB 20px
+  );
+}
+
+/* Light bulb effect */
+.light-bulb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.light-bulb-on {
+  background: radial-gradient(circle, #FFF9C4 0%, #FFD700 50%, #FFA000 100%);
+  box-shadow: 0 0 8px 3px rgba(255, 215, 0, 0.6), 0 0 16px 6px rgba(255, 215, 0, 0.3);
+}
+
+.light-bulb-off {
+  background: radial-gradient(circle, #5D4E37 0%, #3E3424 100%);
+  box-shadow: none;
+}
+
+/* Title hint letters */
+.letter-revealed {
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.letter-blank {
+  color: #555;
+  border-bottom: 2px solid #555;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B0000;
+  border-radius: 3px;
+}
+
+/* Input styling */
+.guess-input {
+  background: rgba(26, 10, 10, 0.9);
+  border: 2px solid #DAA520;
+  color: #FFD700;
+  font-family: 'Playfair Display', serif;
+  transition: all 0.3s ease;
+}
+
+.guess-input:focus {
+  border-color: #FFD700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  outline: none;
+}
+
+.guess-input::placeholder {
+  color: #666;
+  font-style: italic;
+}
+
+/* Confetti particle */
+.confetti-piece {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* Mobile-specific */
+@media (max-width: 768px) {
+  .light-bulb {
+    width: 8px;
+    height: 8px;
+  }
+}
