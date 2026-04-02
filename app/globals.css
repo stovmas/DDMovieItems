@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;700&display=swap');
-
 :root {
   --curtain-red: #8B0000;
   --gold: #FFD700;
@@ -61,32 +59,42 @@ body {
 .curtain-left {
   background: linear-gradient(
     90deg,
-    rgba(74, 4, 4, 1) 0%,
-    rgba(139, 0, 0, 0.95) 40%,
-    rgba(178, 34, 34, 0.9) 70%,
-    rgba(139, 0, 0, 0.95) 100%
+    rgba(55, 2, 2, 1) 0%,
+    rgba(100, 0, 0, 0.98) 15%,
+    rgba(139, 0, 0, 0.95) 35%,
+    rgba(160, 15, 15, 0.92) 55%,
+    rgba(178, 34, 34, 0.88) 70%,
+    rgba(139, 0, 0, 0.95) 85%,
+    rgba(107, 0, 0, 1) 100%
   );
 }
 
 .curtain-right {
   background: linear-gradient(
     270deg,
-    rgba(74, 4, 4, 1) 0%,
-    rgba(139, 0, 0, 0.95) 40%,
-    rgba(178, 34, 34, 0.9) 70%,
-    rgba(139, 0, 0, 0.95) 100%
+    rgba(55, 2, 2, 1) 0%,
+    rgba(100, 0, 0, 0.98) 15%,
+    rgba(139, 0, 0, 0.95) 35%,
+    rgba(160, 15, 15, 0.92) 55%,
+    rgba(178, 34, 34, 0.88) 70%,
+    rgba(139, 0, 0, 0.95) 85%,
+    rgba(107, 0, 0, 1) 100%
   );
 }
 
-/* Curtain folds */
+/* Curtain folds - denser, more velvet-like */
 .curtain-folds-left {
   background: repeating-linear-gradient(
     90deg,
     transparent 0px,
-    rgba(0, 0, 0, 0.15) 3px,
-    transparent 6px,
-    rgba(255, 255, 255, 0.05) 9px,
-    transparent 12px
+    rgba(0, 0, 0, 0.18) 2px,
+    transparent 4px,
+    rgba(255, 255, 255, 0.04) 6px,
+    transparent 8px,
+    rgba(0, 0, 0, 0.12) 10px,
+    transparent 13px,
+    rgba(255, 255, 255, 0.06) 15px,
+    transparent 18px
   );
 }
 
@@ -94,10 +102,14 @@ body {
   background: repeating-linear-gradient(
     270deg,
     transparent 0px,
-    rgba(0, 0, 0, 0.15) 3px,
-    transparent 6px,
-    rgba(255, 255, 255, 0.05) 9px,
-    transparent 12px
+    rgba(0, 0, 0, 0.18) 2px,
+    transparent 4px,
+    rgba(255, 255, 255, 0.04) 6px,
+    transparent 8px,
+    rgba(0, 0, 0, 0.12) 10px,
+    transparent 13px,
+    rgba(255, 255, 255, 0.06) 15px,
+    transparent 18px
   );
 }
 
